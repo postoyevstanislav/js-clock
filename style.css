@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #333;
+}
+
+.clock {
+    margin: 150px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgb(0, 221, 0);
+    font-size: 60px;
+
+}
