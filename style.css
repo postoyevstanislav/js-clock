@@ -7,6 +7,7 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -17,6 +18,32 @@ body {
     color: #84ff84;
     font-size: 150px;
     text-shadow: 0px 0px 15px #84ff84;
+}
+
+.stopwatch-btn {
+    padding: 10px 15px;
+    border-radius: 7px;
+    background-color:#84ff84;
+    
+    font-family: 'Orbitron', sans-serif;
+    font-size: 17px;
+    color: #333;
+    text-shadow: 0px 0px 2px #333;
+
+    border: none;
+    box-shadow: 0px 0px 10px #84ff84;
+    
+}
+
+.stopwatch-btn:hover {
+    cursor: pointer;
+}
+.stopwatch-btn:focus {
+    outline: none;
+}
+
+.off-btn {
+    display: none;
 }
 
 @media only screen and (max-width: 770px) {
