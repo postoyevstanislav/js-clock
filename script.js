@@ -30,9 +30,10 @@ function startTimer() {
     interval = setInterval(() => {
         clearTimeout(timer)
         clock.textContent = a + 'sec'
-        if(a <= 60) {
+        if(a <= 60 && a > 0) {
             a--
         } else {
+            a = 0
             clearInterval(interval)
         }
 
