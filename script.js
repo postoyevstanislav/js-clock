@@ -3,7 +3,7 @@ const stopWatchBtn = document.querySelector('.stopwatch-btn')
 const stopWatchScreen = document.querySelector('.stopwatch-screen')
 const offBtn = document.querySelector('.off-btn')
 
-let timer, interval;
+let showClock, stopwatch;
 
 function showTime() {
     const DATE = new Date()
@@ -19,30 +19,31 @@ function showTime() {
     clock.textContent = time
 
     
-    timer = setTimeout(showTime, 1000)
+    showClock = setTimeout(showTime, 1000)
 }
 
 showTime()
 
 function startTimer() {
+    clearTimeout(showClock)
+    
     let a = 60
-
-    interval = setInterval(() => {
-        clearTimeout(timer)
+    stopwatch = setInterval(() => {
         clock.textContent = a + 'sec'
         if(a <= 60 && a > 0) {
             a--
         } else {
             a = 0
-            clearInterval(interval)
+            clearInterval(stopwatch)
         }
-
         offBtn.style.display = 'inline'
+        stopWatchBtn.style.display = 'none'
     },1000)
 }
 
 function stopTimer() {
-    clearInterval(interval)
+    clearInterval(stopwatch)
+    stopWatchBtn.style.display = 'inline'
     offBtn.style.display = 'none'
     showTime()
 }
